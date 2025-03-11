@@ -1,0 +1,340 @@
+/**
+ *------
+ * BGA framework: Gregory Isabelli & Emmanuel Colin & BoardGameArena
+ * UgoBS implementation : © Ugo Anyaegbunam anyaegbunamu@carleton.edu
+ *
+ * This code has been produced on the BGA studio platform for use on http://boardgamearena.com.
+ * See http://en.boardgamearena.com/#!doc/Studio for more information.
+ * -----
+ *
+ * ugobs.css
+ *
+ * UgoBS stylesheet
+ *
+ */
+
+/*
+    This is the CSS stylesheet of your game User Interface.
+    
+    Styles defined on this file will be applied to the HTML elements you define in your
+    HTML template (ugobs_ugobs.tpl), and to HTML elements you create dynamically
+    (in ugobs.js).
+    
+    Usually, you are using CSS to:
+    
+    1°) define the overall layout of your game
+        (ex: place the board on the top left, place player's hand beside, place the deck on the right, ...).
+
+    2°) create your CSS-sprites:
+        All images of your games should be gathered into a small number of image files. Then, using
+        background-image and background-position CSS properties, you create HTML blocks that can 
+        display these images correctly (see example below).
+    
+    3°) ... anything else:
+        It is really easy to add and remove CSS classes dynamically from your Javascript with
+        dojo.addClass and dojo.removeClass. It is also easy to check if an element has a class
+        (dojo.hasClass) or to get all elements with a specific class (dojo.query). This is why,
+        very often, using CSS classes for the logic of your user interface allow you to do complex
+        thing easily.
+        
+        
+     Note: on the production platform, this file will be compressed and comments will be removed.
+           Consequently, don't hesitate to put as many comments as necessary.
+*/
+
+
+/* Note: you must not use any @import directive */
+
+
+/********* You can start writing your CSS below this line: **********/
+
+
+/*
+    Example of CSS sprites (a black token and a white token, 20x20px each, embedded in the same "tokens.png" 40x20px image):
+
+    .white_token {
+        background-image: url('img/tokens.png');
+        background-position: 0px 0px;
+    }
+    .black_token {
+        background-image: url('img/tokens.png');
+        background-position: -20px 0px;
+    }
+    .token {
+        width: 20px;
+        height: 20px;
+        background-repeat: none;
+    }
+*/
+
+/* Some of this is taken from the hearts tutorial github repository to handle game board formatting */
+
+.playertablecard {
+    position: relative;
+    margin-top: 5px;
+    width: 72px;
+    height: 96px;
+}
+
+/** Table layout **/
+
+/** Prevents the top bar from shaking **/
+
+#page-title {line-height: 38px;} #active_player_statusbar_icon {top: -5px;}
+#page-title.action-button.bgabutton, #page-title.bgabutton {margin-bottom: 4px;}
+#gameaction_status_wrap > div > img {top: 7px;}
+
+/** Table layout **/
+
+#game_board_wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#game_board {
+    position: relative;
+    width: 700px;
+    height: 700px;
+    text-align: center;
+    margin: auto auto auto auto;
+}
+#game_board.extended {height: 500px;}
+#game_board.no_score_chart {margin: auto;}
+#game_board.larger_board {height: 375px;}
+#game_board.extended.larger_board {height: 560px;}
+#score_chart {
+    width: min-content;
+    text-align: center;
+    margin: auto auto auto 5px;
+}
+.table_color {background-color: rgba(255, 255, 255, 0.5);}
+.table_cell {
+    padding: 5px 10px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.playertablename {
+    max-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.dealer_token {display: none;}
+.dealer_token.show_dealer {display: inline;}
+
+#card_pile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 110px;
+    height: 140px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+#revealed_card_pile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    right: 15%;
+    transform: translate(-50%, -50%);
+    width: 110px;
+    height: 140px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+
+/** stock card (background size fix is needed for Safari) **/
+
+.stock_card_border {
+    background-size: 1300% 400%;
+    box-shadow: 1px 1px 2px black;
+}
+html.show-unplayable-cards .unplayable {filter: brightness(0.7);}
+
+/*** cards on table ***/
+
+.card {
+    position: absolute;
+    background-size: 1500% 400%;
+    box-shadow: 1px 1px 2px;
+}
+
+.card, .playertablecard {width: 72px; height: 96px;}
+
+.cardontable {
+    position: absolute;
+    width: 72px;
+    height: 96px;
+    background-image: url('img/cards1.jpg'); 
+}
+
+
+/** hand zone **/
+
+#myhand_wrap {
+    position: relative;
+    width: 95%;
+    margin: 10px auto 0 auto;
+    border-radius: 10px;
+}
+#my_hand {margin-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+#bs_button {
+    width: 100px; 
+    height: 60px; 
+    background-color: red; 
+    color: white; 
+    font-size: 24px; 
+    font-weight: bold; 
+    text-align: center; 
+    line-height: 60px; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    border: 2px solid darkred; 
+    box-shadow: 0 5px 0 darkred, 0 8px 15px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.1s ease, box-shadow 0.1s ease; 
+
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+}
+
+#bs_button:active {
+    transform: translateY(3px); 
+    box-shadow: 0 2px 0 darkred, 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+#play_button {
+    width: 100px; 
+    height: 60px; 
+    background-color: green; 
+    color: white; 
+    font-size: 24px; 
+    font-weight: bold; 
+    text-align: center; 
+    line-height: 60px; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    border: 2px solid darkgreen; 
+    box-shadow: 0 5px 0 darkgreen, 0 8px 15px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.1s ease, box-shadow 0.1s ease; 
+
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+}
+
+#play_button:active {
+    transform: translateY(3px); 
+    box-shadow: 0 2px 0 darkgreen, 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+#pass_button {
+    width: 100px; 
+    height: 60px; 
+    background-color: blue; 
+    color: white; 
+    font-size: 24px; 
+    font-weight: bold; 
+    text-align: center; 
+    line-height: 60px; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    border: 2px solid darkblue; 
+    box-shadow: 0 5px 0 darkblue, 0 8px 15px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.1s ease, box-shadow 0.1s ease; 
+
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+}
+
+#pass_button:active {
+    transform: translateY(3px); 
+    box-shadow: 0 2px 0 darkblue, 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+#my_hand_wrap{
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    right: 140px;
+    width: 400px;
+    margin: auto auto auto auto;
+    border-radius: 10px;
+}
+
+#left_hand_wrap{
+    text-align: center;
+    position: absolute;
+    transform: rotate(90deg);
+    transform-origin: 50% 50%;
+    left: -150px;
+    top: 275px;
+    width: 400px;
+    margin: 10px auto 0 auto;
+    border-radius: 10px;
+}
+
+#top_hand_wrap{
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 140px;
+    width: 400px;
+    margin: 10px auto 0 auto;
+    border-radius: 10px;
+}
+
+#right_hand_wrap{
+    text-align: center;
+    position: absolute;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    right: -150px;
+    top: 275px;
+    width: 400px;
+    margin: 10px auto 0 auto;
+    border-radius: 10px;
+}
+
+#play_button {
+    width: 100px; 
+    height: 60px; 
+    background-color: green; 
+    color: white; 
+    font-size: 24px; 
+    font-weight: bold; 
+    text-align: center; 
+    line-height: 60px; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    border: 2px solid darkgreen; 
+    box-shadow: 0 5px 0 darkgreen, 0 8px 15px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.1s ease, box-shadow 0.1s ease; 
+
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+}
+
+#play_button:active {
+    transform: translateY(3px); 
+    box-shadow: 0 2px 0 darkgreen, 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
