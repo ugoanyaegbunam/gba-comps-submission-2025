@@ -296,13 +296,15 @@ function (dojo, declare) {
                 // Some opponent played a card
                 // 1) See bottom of file
                 index = this.getRandomIndex(handSize);
-                playerHandId = PLACEMENTS[PLAYERID_TO_DIRECTION[player_id]] + '_hand';
+                opponentHand = this.playerHands[PLAYERID_TO_DIRECTION[player_id]];
+                opponentHandLocation = PLACEMENTS[PLAYERID_TO_DIRECTION[player_id]];
+                playerHandId = opponentHandLocation + '_hand';
                 handDiv = document.getElementById(playerHandId);
                 divsArray = Array.from(handDiv.querySelectorAll('.stockitem'));
                 divId = divsArray[index].id;
                 this.placeOnObject('cardontable_' + card_id, divId);
                 this.slideToObject('cardontable_' + card_id, 'playertablecard_pile').play();
-                this.playerHands[PLAYERID_TO_DIRECTION[player_id]].removeFromStock(card_back_type_id);
+                opponentHand.removeFromStock(card_back_type_id);
             } else {
                 // You played a card. If it exists in your hand, move card from there and remove
                 // corresponding item
@@ -348,11 +350,17 @@ function (dojo, declare) {
 
 
             if (player_id != this.player_id) {
-                // Some opponent played a card
-                this.slideToObjectAndDestroy(givenCard, PLACEMENTS[PLAYERID_TO_DIRECTION[player_id]] + '_hand').play();
-                this.playerHands[PLAYERID_TO_DIRECTION[player_id]].addToStock(card_back_type_id);
+                // Some opponent receives the card
+                opponentHand = this.playerHands[PLAYERID_TO_DIRECTION[player_id]];
+                opponentHandLocation = PLACEMENTS[PLAYERID_TO_DIRECTION[player_id]];
+                // Ensure only 13 at a time is seen so that game play not obstructed
+                if (opponentHand.items.length >= 13){
+                    opponentHand.removeFromStock(card_back_type_id);
+                }
+                this.slideToObjectAndDestroy(givenCard, opponentHandLocation + '_hand').play();
+                opponentHand.addToStock(card_back_type_id);
             } else {
-                // You played a card. If it exists in your hand, move card from there and remove
+                // You receive the card
                 givenCard.remove();
                 this.playerHand.addToStockWithId(this.getCardUniqueId(color, value), card_id, from);
             }

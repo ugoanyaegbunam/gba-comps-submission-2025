@@ -1,0 +1,5 @@
+.vscode
+.git
+.DS_Store
+_ide_helper.php
+sftp.json

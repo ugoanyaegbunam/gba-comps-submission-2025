@@ -151,7 +151,7 @@ class Game extends \Table
             'timestamp' => time(),
         ];
 
-        if (!empty($this->playerActions)) {
+        if (!empty($playerActions)) {
             $this->logPlayerAction($playerActions);
 
             $this->gamestate->setPlayerNonMultiactive($player_id, "");
@@ -577,16 +577,11 @@ class Game extends \Table
         $this->DbQuery($sql);
     }
 
-    function logPlayerAction($playerActions)
+    function logPlayerAction($playerAction)
     {
         $sql = "INSERT INTO player_actions (player_id, action, timestamp) VALUES ";
-        $values = [];
-
-        foreach ($playerActions as $entry) {
-            $values[] = "('".$entry['player_id']."','".$entry['action']."','".$entry['timestamp']."')";
-        }
-
-        $sql .= implode(',', $values);
+        $sql .= "('".$playerAction['player_id']."','".$playerAction['action']."','".$playerAction['timestamp']."')";
+    
         $this->DbQuery($sql);
     }
     function clearPlayerActions() 
