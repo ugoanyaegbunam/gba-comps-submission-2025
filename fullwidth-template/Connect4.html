@@ -31,20 +31,29 @@
                         <a>Games</a>
                         <ul>
                            <li><a href="Gomuku.html">Gomoku</a></li>
-                           <li><a href="Connect 4.html">Connect 4</a></li>
+                           <li><a href="connect4.html">Connect 4</a></li>
                            <li><a href="Regicide.html">Regicide</a></li>
                            <li><a href="BS.html">BS</a></li>
                         </ul>
                      </li>
                      <li>
-                        <a href="about us.html">About Us</a>
+                        <a href="aboutus.html">About Us</a>
                      </li>
                   </ul>
                </div>
             </div>
          </nav>
       </header>
+
       <section class="text-center">
+         <!-- CAROUSEL --> 
+         <div id="carousel">
+            <div id="header-carousel" class="owl-carousel owl-theme">
+               <div class="item">
+                  <img src="img/connect4Header-thin.png" alt="">
+               </div>
+            </div>
+         </div>
          <!-- FIRST BLOCK -->
       
          <!-- SECOND BLOCK -->
@@ -53,8 +62,9 @@
                <div class="margin-bottom">
                   <div class="margin">
                      <article class="s-12 m-12 l-8 center">
-                        <h1 class="margin-bottom">About Us</h1>
-                        <p>We are a group of Carleton College students who came together with the shared interest in game development and decided to go through with our passions with our comps project.</p>
+                        <h1 class="margin-bottom">Carleton Connect 4</h1>
+                        <p>During the development of the game Connect 4, since most of the needed functions and layout were already designed when working on Gomoku, there was more time to focus on front-end development. Aside from the designing of the new board and tokens, there were also some adjustments to the size of the board and the number of tokens needed to be aligned to win the game. Other forms of development include aligning the playable spaces onto the board (which are divs and hold information about which tokens exist within it), changing the playable spaces from squares to circles, and making the slide animation look nice. Finally, the game was in a presentable state. Aside from adding an edge case where the game ties when there are no spaces left on the board, there was also some work done on the connect function. Initially, the connect function worked fine, but through a change in the algorithm, it simplified the function while still allowing it to work.
+                        </p>
                      </article>
                   </div>
                </div>
@@ -63,26 +73,19 @@
          <!-- GALLERY -->
          <div id="third-block" class="text-center">
             <div class="line">
+               <h2 class="margin-bottom">Gallery</h2>
                <div class="margin">
                   <div class="s-12 m-6 l-3">
-                     <img class="margin-bottom full-img" src="img/Portaits/Leo.jpg">
-                     <a href="www.linkedin.com/in/leo04moran">Leo Moran</a>
-                     <p>Connect 4</p>
+                     <img class="margin-bottom full-img" src="img/board.png">
                   </div>
                   <div class="s-12 m-6 l-3">
-                     <img class="margin-bottom full-img" src="img/Portaits/ethan.JPG">
-                     <p>Ethan Cline-Cole</p>
-                     <p>Regicide</p>
+                     <img class="margin-bottom full-img" src="img/alignment.png">
                   </div>
                   <div class="s-12 m-6 l-3">
-                     <img class="margin-bottom full-img" src="img/Portaits/jonathan.jpg">
-                     <p>Jonathan Vilms</p>
-                     <p>Gomoku</p>
+                     <img class="margin-bottom full-img" src="img/squareToCircles.png">
                   </div>
                   <div class="s-12 m-6 l-3">
-                    <img class="margin-bottom full-img" src="img/ugo.jpg">
-                    <a href="https://www.linkedin.com/in/ugo-anyaegbunam/">Ugo Anyaegbunam '25</a>
-                    <p>BS</p>
+                    <img class="margin-bottom full-img" src="img/Game.png">
                  </div>
                </div>
             </div>
