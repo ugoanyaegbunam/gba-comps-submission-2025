@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>BGA COMPS 2025</title>
+      <link rel="stylesheet" href="css/components.css">
+      <link rel="stylesheet" href="css/icons.css">
+      <link rel="stylesheet" href="css/responsee.css">
+      <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+      <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+      <!-- CUSTOM STYLE -->
+      <link rel="stylesheet" href="css/template-style.css">
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+      <script type="text/javascript" src="js/jquery-ui.min.js"></script>    
+   </head>
+   <body class="size-1280">
+       <!-- TOP NAV WITH LOGO -->
+       <header>
+         <nav>
+            <div class="line">
+               <div class="m-12 l-2">
+                  <img class="s-5 m-2 l-12 center" src="img/logo.png">
+               </div>
+               <div class="top-nav s-12 l-10 right">
+                  
+                  <ul class="right">
+                     <li><a href="index.html">Home</a></li>
+                     <li>
+                        <a>Games</a>
+                        <ul>
+                           <li><a href="Gomuku.html">Gomoku</a></li>
+                           <li><a href="connect4.html">Connect 4</a></li>
+                           <li><a href="Regicide.html">Regicide</a></li>
+                           <li><a href="BS.html">BS</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="aboutus.html">About Us</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </header>
+
+      <section class="text-center">
+         <!-- CAROUSEL --> 
+         <div id="carousel">
+            <div id="header-carousel" class="owl-carousel owl-theme">
+               <div class="item">
+                  <img src="img/connect4Header-thin.png" alt="">
+               </div>
+            </div>
+         </div>
+         <!-- FIRST BLOCK -->
+      
+         <!-- SECOND BLOCK -->
+         <div id="second-block" class="text-center">
+            <div class="line">
+               <div class="margin-bottom">
+                  <div class="margin">
+                     <article class="s-12 m-12 l-8 center">
+                        <h1 class="margin-bottom">Carleton Connect 4</h1>
+                        <p>During the development of the game Connect 4, since most of the needed functions and layout were already designed when working on Gomoku, there was more time to focus on front-end development. Aside from the designing of the new board and tokens, there were also some adjustments to the size of the board and the number of tokens needed to be aligned to win the game. Other forms of development include aligning the playable spaces onto the board (which are divs and hold information about which tokens exist within it), changing the playable spaces from squares to circles, and making the slide animation look nice. Finally, the game was in a presentable state. Aside from adding an edge case where the game ties when there are no spaces left on the board, there was also some work done on the connect function. Initially, the connect function worked fine, but through a change in the algorithm, it simplified the function while still allowing it to work.
+                        </p>
+                     </article>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- GALLERY -->
+         <div id="third-block" class="text-center">
+            <div class="line">
+               <h2 class="margin-bottom">Gallery</h2>
+               <div class="margin">
+                  <div class="s-12 m-6 l-3">
+                     <img class="margin-bottom full-img" src="img/board.png">
+                  </div>
+                  <div class="s-12 m-6 l-3">
+                     <img class="margin-bottom full-img" src="img/alignment.png">
+                  </div>
+                  <div class="s-12 m-6 l-3">
+                     <img class="margin-bottom full-img" src="img/squareToCircles.png">
+                  </div>
+                  <div class="s-12 m-6 l-3">
+                    <img class="margin-bottom full-img" src="img/Game.png">
+                 </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- FOOTER -->
+      <footer>
+         <div class="line">
+            <div class="s-12 l-6">
+               <p>Copyright 2019, Vision Design - graphic zoo</p>
+            </div>
+            <div class="s-12 l-6">
+               <a class="right" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework">Design and coding by Responsee Team</a>
+            </div>
+         </div>
+      </footer>
+      <script type="text/javascript" src="js/responsee.js"></script>
+      <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+      <script type="text/javascript">
+        jQuery(document).ready(function($) {
+          var owl = $('#header-carousel');
+          owl.owlCarousel({
+            nav: false,
+            dots: true,
+            items: 1,
+            loop: true,
+            navText: ["&#xf007","&#xf006"],
+            autoplay: true,
+            autoplayTimeout: 3000
+          });
+          var owl = $('#news-carousel');
+          owl.owlCarousel({
+            nav: false,
+            dots: true,
+            items: 1,
+            loop: true,
+            navText: ["&#xf007","&#xf006"],
+            autoplay: true,
+            autoplayTimeout: 3000
+          });
+        })
+      </script>
+   </body>
+</html>

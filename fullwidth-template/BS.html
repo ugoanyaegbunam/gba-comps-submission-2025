@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>BGA COMPS 2025</title>
+      <link rel="stylesheet" href="css/components.css">
+      <link rel="stylesheet" href="css/icons.css">
+      <link rel="stylesheet" href="css/responsee.css">
+      <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+      <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+      <!-- CUSTOM STYLE -->
+      <link rel="stylesheet" href="css/template-style.css">
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+      <script type="text/javascript" src="js/jquery-ui.min.js"></script>    
+   </head>
+   <body class="size-1280">
+       <!-- TOP NAV WITH LOGO -->
+       <header>
+         <nav>
+            <div class="line">
+               <div class="m-12 l-2">
+                  <img class="s-5 m-2 l-12 center" src="img/logo.png">
+               </div>
+               <div class="top-nav s-12 l-10 right">
+                  
+                  <ul class="right">
+                     <li><a href="index.html">Home</a></li>
+                     <li>
+                        <a>Games</a>
+                        <ul>
+                           <li><a href="Gomuku.html">Gomoku</a></li>
+                           <li><a href="connect4.html">Connect 4</a></li>
+                           <li><a href="Regicide.html">Regicide</a></li>
+                           <li><a href="BS.html">BS</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="aboutus.html">About Us</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <section class="text-center">
+         <!-- CAROUSEL --> 
+         <div id="carousel">
+            <div id="header-carousel" class="owl-carousel owl-theme">
+               <div class="item">
+                  <img src="img/bsheader.png" alt="">
+                  <div class="line">
+                     <h2>BS</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- FIRST BLOCK -->
+      
+         <!-- SECOND BLOCK -->
+         <div id="second-block" class="text-center">
+            <div class="line">
+               <div class="margin-bottom">
+                  <div class="margin">
+                     <article class="s-12 m-12 l-8 center">
+                        <h1 class="margin-bottom">What is it?</h1>
+                        <p>BS (also known as Cheat, Bluff, or I Doubt It) is a card game that tests players' ability to deceive and detect lies. 
+                           The game is played with a standard deck of 52 cards and involves players taking turns placing cards face down while declaring their rank, typically in ascending order. 
+                           However, players can lie about the cards they are playing. Other players have the option to challenge a play by calling "BS," forcing the accused player to reveal their cards. 
+                           If the challenge is correct and the player was lying, they must take the entire discard pile; if the challenge is incorrect, the challenger takes the pile instead. 
+                           The goal of the game is to get rid of all one's cards first. BS combines strategy, deception, and social deduction, making it an entertaining and unpredictable game.
+                        </p>
+                     </article>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- GALLERY -->
+         <div id="third-block" class="text-center">
+            <div class="line">
+               <h2 class="margin-bottom">Gameplay Demo</h2>
+               <div class="margin">
+                  <div>
+                     <video width="720" height="480" controls>
+                        <source src="img/Final Comps submission video.mp4" type="video/mp4">
+                     </video>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- FOOTER -->
+      <footer>
+         <div class="line">
+            <div class="s-12 l-6">
+               <p>Copyright 2019, Vision Design - graphic zoo</p>
+            </div>
+            <div class="s-12 l-6">
+               <a class="right" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework">Design and coding by Responsee Team</a>
+            </div>
+         </div>
+      </footer>
+      <script type="text/javascript" src="js/responsee.js"></script>
+      <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+      <script type="text/javascript">
+        jQuery(document).ready(function($) {
+          var owl = $('#header-carousel');
+          owl.owlCarousel({
+            nav: false,
+            dots: true,
+            items: 1,
+            loop: true,
+            navText: ["&#xf007","&#xf006"],
+            autoplay: true,
+            autoplayTimeout: 3000
+          });
+          var owl = $('#news-carousel');
+          owl.owlCarousel({
+            nav: false,
+            dots: true,
+            items: 1,
+            loop: true,
+            navText: ["&#xf007","&#xf006"],
+            autoplay: true,
+            autoplayTimeout: 3000
+          });
+        })
+      </script>
+   </body>
+</html>

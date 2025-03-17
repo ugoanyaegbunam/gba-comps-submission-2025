@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>BGA COMPS 2025</title>
+      <link rel="stylesheet" href="css/components.css">
+      <link rel="stylesheet" href="css/icons.css">
+      <link rel="stylesheet" href="css/responsee.css">
+      <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+      <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+      <!-- CUSTOM STYLE -->
+      <link rel="stylesheet" href="css/template-style.css">
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+      <script type="text/javascript" src="js/jquery-ui.min.js"></script>    
+   </head>
+   <body class="size-1280">
+       <!-- TOP NAV WITH LOGO -->
+       <header>
+         <nav>
+            <div class="line">
+               <div class="m-12 l-2">
+                  <img class="s-5 m-2 l-12 center" src="img/logo.png">
+               </div>
+               <div class="top-nav s-12 l-10 right">
+                  
+                  <ul class="right">
+                     <li><a href="index.html">Home</a></li>
+                     <li>
+                        <a>Games</a>
+                        <ul>
+                           <li><a href="Gomuku.html">Gomoku</a></li>
+                           <li><a href="connect4.html">Connect 4</a></li>
+                           <li><a href="Regicide.html">Regicide</a></li>
+                           <li><a href="BS.html">BS</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <a href="aboutus.html">About Us</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <section class="text-center">
+         <!-- CAROUSEL --> 
+         <div id="carousel">
+            <div id="header-carousel" class="owl-carousel owl-theme">
+               <div class="item">
+                  <img src="img/gomokuheader-thin.jpg" alt="" href="Gomuku.html">
+                  <div class="line">
+                     <h2>Gomoku</h2>
+                  </div>
+               </div>
+               <div class="item">
+                  <img src="img/connect4Header-thin.png" alt="" href="connect4.html">
+                  <div class="line">
+                     <h2>Connect 4</h2>
+                  </div>
+               </div>
+               <div class="item">
+                  <img src="img/bsheader-thin.png" alt="" href="BS.html">
+                  <div class="line">
+                     <h2>BS</h2>
+                  </div>
+               </div>
+               <div class="item">
+                  <img src="img/Regicide/header.png" alt="" href="Regicide.html">
+                  <div class="line">
+                     <h2>Regicide</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- FIRST BLOCK -->
+         <div id="first-block" class="text-center">
+            <div class="line">
+               <div class="margin">
+                  <div class="s-12 m-6 l-3 margin-bottom">
+                     <i class="icon-joystick icon3x"></i>
+                     <h2 class="margin-bottom">About BGA</h2>
+                     <p>Board Game Arena (BGA) is an online portal that allows users to play thousands of board games on their browsers. BGA makes use of a volunteer development model, where board game enthusiasts contribute their time to develop one of BGA’s licensed but not published games and release them to the website.</p>
+                  </div>
+                  <div class="s-12 m-6 l-3 margin-bottom">
+                     <i class="icon-star icon3x"></i>
+                     <h2 class="margin-bottom">What it Does</h2>
+                     <p>BGA provides a ready-to-play client-server framework that gives developers a foundation to implement asynchronous, online gameplay without building the network from scratch.
+                        BGA also has a built-in state-machine that keeps track of the various phases of gameplay, helping developers focus on building mechanics without having to worry about when these mechanics are allowed to run.
+                     </p>
+                  </div>
+                  <div class="s-12 m-6 l-3 margin-bottom">
+                     <i class="icon-node_icon icon3x"></i>
+                     <h2 class="margin-bottom">Our Project</h2>
+                     <p>In our Comps, each group member created an existing game for the BGA framework. The games are all fully featured, live multiplayer. The games are not hosted publicly.</p>
+                  </div>
+                  <div class="s-12 m-6 l-3 margin-bottom">
+                     <i class="icon-discussion icon3x"></i>
+                     <h2 class="margin-bottom">Our Process</h2>
+                     <p>While we were working individually to create our games, Our first term we collaborated to learn the BGA software and libraries, and helped each other problem solve in various circumstances</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- SECOND BLOCK -->
+         <div id="second-block" class="text-center">
+            <div class="line">
+               <div class="margin-bottom">
+                  <div class="margin">
+                     <article class="s-12 m-12 l-8 center">
+                        <h1 class="margin-bottom"></h1>
+                        <p> Special thanks to Dave Musicant, our Comps advisor
+                        </p>
+                     </article>
+                  </div>
+               </div>
+            </div>
+         </div>
+      <!-- FOOTER -->
+      <footer>
+         <div class="line">
+            <div class="s-12 l-6">
+               <p>Copyright 2019, Vision Design - graphic zoo</p>
+            </div>
+            <div class="s-12 l-6">
+               <a class="right" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework">Responsee Team</a>
+            </div>
+         </div>
+      </footer>
+      <script type="text/javascript" src="js/responsee.js"></script>
+      <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
+      <script type="text/javascript">
+        jQuery(document).ready(function($) {
+          var owl = $('#header-carousel');
+          owl.owlCarousel({
+            nav: false,
+            dots: true,
+            items: 1,
+            loop: true,
+            navText: ["&#xf007","&#xf006"],
+            autoplay: true,
+            autoplayTimeout: 3000
+          });
+          var owl = $('#news-carousel');
+          owl.owlCarousel({
+            nav: false,
+            dots: true,
+            items: 1,
+            loop: true,
+            navText: ["&#xf007","&#xf006"],
+            autoplay: true,
+            autoplayTimeout: 3000
+          });
+        })
+      </script>
+   </body>
+</html>
